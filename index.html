@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Placement Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+<!-- Auth Page -->
+<div id="authPage" class="page active">
+  <h1>Campus Placement Quiz</h1>
+
+  <!-- Signup Section -->
+  <div id="signupSection">
+    <h2>Create Account</h2>
+
+    <div class="inputWrapper">
+      <input type="text" id="signupUsername" placeholder="Username">
+    </div>
+
+    <div class="inputWrapper">
+      <input type="email" id="signupEmail" placeholder="Email">
+    </div>
+
+    <div class="inputWrapper passwordWrapper">
+      <input type="password" id="signupPassword" placeholder="Password">
+      <span class="togglePassword" data-target="signupPassword">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="eyeIcon" viewBox="0 0 16 16">
+          <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8z"/>
+          <path d="M8 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+        </svg>
+      </span>
+    </div>
+
+    <p class="instruction">Password must contain: 1 uppercase, 1 lowercase, 1 special character</p>
+    <button id="signupBtn">Sign Up</button>
+    <p>Already have an account? <span id="showLogin" class="clickable">Login</span></p>
+  </div>
+  
+  <!-- Login Section -->
+  <div id="loginSection" style="display:none;">
+    <h2>Login</h2>
+
+    <div class="inputWrapper">
+      <input type="email" id="loginEmail" placeholder="Email">
+    </div>
+
+    <div class="inputWrapper passwordWrapper">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <span class="togglePassword" data-target="loginPassword">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="eyeIcon" viewBox="0 0 16 16">
+          <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8z"/>
+          <path d="M8 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+        </svg>
+      </span>
+    </div>
+
+    <button id="loginBtn">Login</button>
+    <p>Don't have an account? <span id="showSignup" class="clickable">Sign Up</span></p>
+  </div>
+</div>
+
+<!-- Start Page -->
+<div id="startPage" class="page">
+  <h2>Welcome, <span id="displayName"></span></h2>
+  <button id="startTestBtn">Start Test</button>
+  <button id="goToDashboardBtn">Go to Dashboard</button>
+</div>
+
+<!-- Quiz Page -->
+<div id="quizPage" class="page">
+  <div class="topbar">
+    <div id="timer">00:30</div>
+    <button id="exitTest">Exit Test</button>
+  </div>
+  <div id="questionContainer">
+    <h3 id="questionText"></h3>
+    <div id="optionsContainer"></div>
+  </div>
+  <div class="quizControls">
+    <button id="submitBtn">Submit</button>
+    <button id="nextBtn">Next</button>
+  </div>
+  <div id="progressBar">
+    <div id="progressFill"></div>
+    <div id="rocket">🚀</div>
+  </div>
+</div>
+
+<!-- Result Page -->
+<div id="resultPage" class="page">
+  <h2>Test Completed</h2>
+  <p id="resultMessage"></p>
+  <h3>Your Score: <span id="scoreDisplay"></span>/30</h3>
+  <button id="restartBtn">Back to Start Page</button>
+  <button id="dashboardBtn">Go to Dashboard</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
